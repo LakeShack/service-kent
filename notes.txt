@@ -1,0 +1,25 @@
+Database
+  - MongoDB
+  - generate 100 fake data from faker
+  - no post functions necessary for now
+
+Server
+ - send get request to database
+ - answer client's get request
+
+Client
+ - index.js
+   - top, renders the element to html
+ - homePage
+   - description on left
+   - renders the picture component on the right
+ - share
+   - show whether shared on fb, twitter, email
+ - save
+   - show whether saved to list
+ - picture
+   - show the main picture on the front page
+ - tourPage
+   - rendered when you click on picture or "tour this home"
+   - living room, bedroom, kitchen
+   - pictures for each and allows you to click on the pictures
