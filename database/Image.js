@@ -1,10 +1,11 @@
-/* eslint camelcase: 0 */  // --> OFF
+/* eslint camelcase: 0 */ // --> OFF
 const mongoose = require('mongoose');
 const db = require('./index.js');
 mongoose.Promise = global.Promise;
 
 
 const imageSchema = new mongoose.Schema({
+  id: Number, 
   title: String,
   location: String,
   rating: Number,
@@ -24,4 +25,15 @@ const imageSchema = new mongoose.Schema({
 
 const Image = mongoose.model('Image', imageSchema);
 
+let getImages = (id, callback) => {
+  Image.
+    findOne({id: id}, function(err, result) {
+      if (err) {
+        console.log('DATABASE GET ERROR ', err);
+      }
+    }).
+    exec(callback);
+};
+
 module.exports.Image = Image;
+module.exports.getImages = getImages;
