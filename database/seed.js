@@ -12,7 +12,7 @@ var imageDataCreater = function () {
   for(var i = 1; i < 101; i++){
     resultArr.push({
         id: i,
-        title: 'Relax in the comfort of '+ faker.company.bsNoun,
+        title: 'Relax in the comfort of '+ faker.company.bsNoun(),
         location: faker.address.city(),
         rating: (Math.floor(Math.random()*5)+1),
         saved: faker.random.boolean(),

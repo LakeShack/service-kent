@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const image = require('../database/image.js');
 const app = express();
-const PORT = 4212;
+const port = 4212;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -25,6 +25,6 @@ app.get('/images/:id', function(req, res) {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`listening on port ${PORT}`);
+app.listen(port, () => {
+  console.log(`listening on port ${port}`);
 });
