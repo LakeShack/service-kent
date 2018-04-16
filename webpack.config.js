@@ -1,6 +1,6 @@
 var path = require('path');
 var SRC_DIR = path.join(__dirname, '/client/src');
-var DIST_DIR = path.join(__dirname, '/client/dist');
+var DIST_DIR = path.join(__dirname, '/public');
 
 module.exports = {
   entry: `${SRC_DIR}/index.jsx`,
@@ -21,12 +21,32 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
+              modules: true,
+              localIdentName: '[local]___[hash:base64:5]'
+            }
+          }
+        ],
       },
-      { test: /\.png$/, use: 'file-loader' },
-      { test: /\.jpg$/, use: 'file-loader' },
-      { test: /\.svg$/, use: 'file-loader' },
-    ],
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192
+            }
+          }
+        ]
+      }
+    ]
   },
   resolve: {
     extensions: ['.js', '.jsx'],

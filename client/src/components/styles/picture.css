@@ -1,0 +1,10 @@
+.container {
+  display: inline-block;
+  width: 62%;
+  margin: 1%;
+  margin-right: 3%;
+}
+
+.picture {
+  height: 550px;
+}

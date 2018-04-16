@@ -13,6 +13,8 @@ Client
  - homePage
    - description on left
    - renders the picture component on the right
+ - introduction
+   - component representing the description on the left of the homepage
  - share
    - show whether shared on fb, twitter, email
  - save
