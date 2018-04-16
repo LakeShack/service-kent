@@ -7,7 +7,7 @@ const port = 4212;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.use(express.static(__dirname + '/../public/dist'));
+app.use(express.static(__dirname + '/../public'));
 
 app.get('/images/:id', function(req, res) {
   console.log('GET REQUEST WORKING');
