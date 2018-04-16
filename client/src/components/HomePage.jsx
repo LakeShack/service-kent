@@ -5,8 +5,8 @@ import Save from './Save.jsx';
 import Share from './Share.jsx';
 import Tour from './Tour.jsx';
 import $ from 'jquery';
+import queryString from 'query-string';
 
-const queryString = require('query-string');
 
 class HomePage extends React.Component {
   constructor(props) {
