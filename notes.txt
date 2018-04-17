@@ -10,17 +10,17 @@ Server
 Client
  - index.js
    - top, renders the element to html
- - homePage
+ - homePage (parent of introduction and picture)
    - description on left
    - renders the picture component on the right
- - introduction
+ - introduction 
    - component representing the description on the left of the homepage
- - share
+ - picture (parent of share, save, tourPage)
+   - show the main picture on the front page
+ - share 
    - show whether shared on fb, twitter, email
  - save
    - show whether saved to list
- - picture
-   - show the main picture on the front page
  - tourPage
    - rendered when you click on picture or "tour this home"
    - living room, bedroom, kitchen
