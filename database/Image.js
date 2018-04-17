@@ -5,7 +5,7 @@ mongoose.Promise = global.Promise;
 
 
 const imageSchema = new mongoose.Schema({
-  id: Number, 
+  id: Number,
   title: String,
   location: String,
   rating: Number,
@@ -17,7 +17,7 @@ const imageSchema = new mongoose.Schema({
   },
   image: {
     living_room: String,
-    bedroom: String, 
+    bedroom: String,
     dining_room: String,
     den: String
   }
@@ -27,7 +27,7 @@ const Image = mongoose.model('Image', imageSchema);
 
 let getImages = (id, callback) => {
   Image.
-    findOne({id: id}, function(err, result) {
+    findOne({ id: id }, function (err, result) {
       if (err) {
         console.log('DATABASE GET ERROR ', err);
       }
@@ -35,5 +35,13 @@ let getImages = (id, callback) => {
     exec(callback);
 };
 
+let patchImage = (id, callback) => {
+  Image.findOneAndUpdate({ id: id },
+    { $set: { saved: true } },
+    { new: true },
+    callback);
+};
+
 module.exports.Image = Image;
 module.exports.getImages = getImages;
+module.exports.patchImage = patchImage;
