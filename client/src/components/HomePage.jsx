@@ -38,6 +38,20 @@ class HomePage extends React.Component {
       });
   }
 
+  saveImageToList(id) {
+    $.patch(`/images/${id}`, function(data) {
+    })
+      .done((data) => {
+        let arr = [];
+        arr.push(data);
+        this.setState({image: data});
+        console.log('CLIENT PATCH IMAGE OBJ :: ', data.image);        
+      })
+      .fail((error) => {
+        console.log('CLIENT PATCH FAILED');
+        return;
+      });
+  }
 
   render() {
     return (
