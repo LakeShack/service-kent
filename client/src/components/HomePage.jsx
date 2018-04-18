@@ -9,7 +9,7 @@ class HomePage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      image: [],
+      image: {},
     };
     this.getImage = this.getImage.bind(this);
   }
@@ -28,8 +28,6 @@ class HomePage extends React.Component {
     $.get(`/images/${id}`, function(data) {
     })
       .done((data) => {
-        let arr = [];
-        arr.push(data);
         this.setState({image: data});
         console.log('CLIENT GET IMAGE OBJ :: ', data.image);        
       })

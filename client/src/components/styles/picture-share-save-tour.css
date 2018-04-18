@@ -1,0 +1,82 @@
+.container {
+  display: inline-block;
+  width: 58%;
+  height: 550px;
+  margin: 1%;
+  margin-right: 3%;
+  margin-left: 0.6%;
+  position: relative;  
+  z-index: 1;
+}
+
+.picture {
+  position: absolute;
+  height: 550px;
+  width: 100%;
+  z-index: 1;
+}
+
+.save_button {
+  position: relative;
+  margin-top: 3%;
+  margin-right: 3%;
+  height: 35px;
+  width: 55px;
+  float: right;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 5;  
+}
+
+.save_image {
+  width: 48%;
+  height: 66%;
+}
+
+.share_button {
+  position: relative;
+  margin-top: 3%;
+  margin-right: 3%;
+  height: 35px;
+  width: 55px;
+  float: right;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 5;  
+}
+
+.share_image {
+  width: 50%;
+  height: 50%;
+}
+
+.tour_button {
+  position: absolute;
+  bottom: 4%;
+  right: 0;
+  margin-top: 3%;
+  margin-right: 3%;
+  height: 35px;
+  width: 160px;
+  float: right;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 5; 
+  font-weight: 500;
+  font-size: 12px;
+  padding-top: 3px;
+}
+
+.tour_image {
+  float: left;
+  margin-left: 3%;
+  width: 15%;
+  height: 55%;
+}
+

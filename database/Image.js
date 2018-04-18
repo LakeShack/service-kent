@@ -9,6 +9,7 @@ const imageSchema = new mongoose.Schema({
   title: String,
   location: String,
   rating: Number,
+  reviewCount: Number,
   saved: Boolean,
   shared: {
     facebook: Boolean,
