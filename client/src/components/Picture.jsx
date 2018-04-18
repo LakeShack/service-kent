@@ -2,7 +2,7 @@ import React from 'react';
 import Save from './Save.jsx';
 import Share from './Share.jsx';
 import Tour from './Tour.jsx';
-import style from './styles/picture.css';
+import style from './styles/picture-share-save-tour.css';
 
 
 var Picture = (props) => (

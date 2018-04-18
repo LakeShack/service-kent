@@ -2,19 +2,38 @@
   display: inline-block;
   background-color: rgb(245, 244, 244);
   height: 550px;
-  width: 30%;
+  width: 33%;
   vertical-align: top;
   margin: 1%;
   margin-left: 3%;
+  margin-right: 0.6%;
 }
 
 .logo {
   margin-left: 8%;
-  margin-top: 5%;
-  height: 12%;
-  width: 25%;
+  margin-top: 10%;
+  margin-bottom: 2%;
+  height: 9%;
+  width: 21%;
 }
 
-.text {
-  margin-left: 8%;
+.text_title {
+  color: darkslategray;
+  font-size: 12px;
+  margin-left: 10%;
+  margin-bottom: 3%
+}
+
+.text_location {
+  color: darkslategray;  
+  margin-left: 10%;  
+  margin-right: 20%;
+  font-size: 45px;
+  font-weight: 200;
+}
+
+.rating {
+  margin-left: 10%;  
+  margin-bottom: 10%;
+  font-size: 11px;
 }
