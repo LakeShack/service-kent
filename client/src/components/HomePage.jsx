@@ -6,7 +6,6 @@ import ListView from './ListView.jsx';
 import $ from 'jquery';
 import queryString from 'query-string';
 
-
 class HomePage extends React.Component {
   constructor(props) {
     super(props);

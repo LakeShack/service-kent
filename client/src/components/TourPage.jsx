@@ -20,6 +20,7 @@ var TourPage = (props) => {
   }
 
   return (
+
     <div>
       <div className={style.tour_page}>
         <div className={style.navigation}>
@@ -45,6 +46,7 @@ var TourPage = (props) => {
         </div>
       </div>
     </div>
+    
   );
 };
 

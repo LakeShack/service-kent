@@ -10,6 +10,5 @@ var Tour = (props) => {
   );
 };
 
-
 export default Tour;
 
