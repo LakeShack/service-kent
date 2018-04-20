@@ -42,7 +42,7 @@ let getImages = (id, callback) => {
     exec(callback);
 };
 
-let patchImageSavedTrue = (id, callback) => {
+let patchImage = (id, callback) => {
   Image.findOneAndUpdate({ id: id },
     { $set: { saved: true } },
     { new: true },

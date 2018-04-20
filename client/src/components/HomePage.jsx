@@ -7,10 +7,13 @@ import $ from 'jquery';
 import queryString from 'query-string';
 
 class HomePage extends React.Component {
+
   constructor(props) {
+
     super(props);
+
     this.state = {
-      image: {},
+      home: {},
       tourView: false,
       listView: false,
     };
@@ -21,6 +24,7 @@ class HomePage extends React.Component {
   }
 
   componentDidMount() {
+
     let parsed = queryString.parse(location.search);
     let currentId = Number(parsed.id);
     if (currentId) {
@@ -28,69 +32,78 @@ class HomePage extends React.Component {
     } else {
       this.getImage(1);
     }
+
   }
 
   getImage(id) {
+
     $.get(`/images/${id}`, function (data) {
     })
       .done((data) => {
-        this.setState({ image: data });
-        console.log('CLIENT GET IMAGE OBJ :: ', data.image);
+        this.setState({ home: data });
       })
       .fail((error) => {
         return;
       });
+
   }
 
   saveImageToList(id) {
+
     $.patch(`/images/${id}`, function (data) {
     })
       .done((data) => {
         this.setState({ image: data });
-        console.log('CLIENT PATCH IMAGE OBJ :: ', data.image);
       })
       .fail((error) => {
         console.log('CLIENT PATCH FAILED');
         return;
       });
+
   }
 
   handlePageViewClick() {
+
     this.setState((prevState) => {
       return { tourView: !prevState.tourView };
     });
+
   }
 
 
   handleListViewClick() {
+
     this.setState((prevState) => {
       return { listView: !prevState.listView };
     });
+
   }
 
   render() {
+
     return (
       <div className='home-page'>
-        <Introduction image={this.state.image} />
-        {this.state.image.image &&
+        <Introduction home={this.state.home} />
+        {this.state.home.image &&
           <Picture 
-            image={this.state.image} 
+            home={this.state.home} 
             handlepageviewclick={this.handlePageViewClick} 
             tourview={this.state.tourView} />
         }
-        {this.state.image.image && this.state.tourView ? 
+        {this.state.home.image && this.state.tourView ? 
           <TourPage 
-            images={this.state.image.image} 
-            descriptions={this.state.image.descriptions} 
+            images={this.state.home.image} 
+            descriptions={this.state.home.descriptions} 
             handlepageviewclick={this.handlePageViewClick}
             handlelistviewclick={this.handleListViewClick}/> 
           : null}
-        {this.state.image.image && this.state.tourView && this.state.listView ? 
-          <ListView images={this.state.image.image} /> 
+        {this.state.home.image && this.state.tourView && this.state.listView ? 
+          <ListView images={this.state.home.image} /> 
           : null}
       </div>
     );
   }
+
 }
 
 export default HomePage;

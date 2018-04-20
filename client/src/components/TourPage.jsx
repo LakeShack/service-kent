@@ -19,34 +19,30 @@ var TourPage = (props) => {
     btnImage = tourImage;
   }
 
+  const roomArr = [['Living area', 'living_room'], ['Dining area', 'dining_room'], ['Bedroom area', 'bedroom'], ['Den', 'den']];
+
+  const renderRooms = () => {
+    return roomArr.map((room) => {
+      return (<div key={room[0]}>
+        <p className={style.room_text}>{room[0]}</p>
+        <p className={style.description_text}>{props.descriptions[room[1]]}</p>
+        <img src={props.images[room[1]]} className={style.picture} />
+      </div>);
+    });
+  };
+
   return (
 
-    <div>
-      <div className={style.tour_page}>
-        <div className={style.navigation}>
-          <button className={style.back_button} onClick={() => props.handlepageviewclick()}><img className={style.back_image} src={arrowImage} /></button>
-          <button className={style.tour_button} onClick={() => props.handlelistviewclick()}><img className={style.tour_image} src={btnImage} />{btnText}</button>
-        </div>
-        <div className={style.content}>
-          <p className={`${style.room_text} ${style.top}`}>Living area</p>
-          <p className={style.description_text}>{props.descriptions.living_room}</p>
-          <img src={props.images.living_room} className={style.picture} />
-
-          <p className={style.room_text}>Dining area</p>
-          <p className={style.description_text}>{props.descriptions.dining_room}</p>
-          <img src={props.images.dining_room} className={style.picture} />
-
-          <p className={style.room_text}>Bedroom area</p>
-          <p className={style.description_text}>{props.descriptions.bedroom}</p>
-          <img src={props.images.bedroom} className={style.picture} />
-
-          <p className={style.room_text}>Den</p>
-          <p className={style.description_text}>{props.descriptions.den}</p>
-          <img src={props.images.den} className={style.picture} />
-        </div>
+    <div className={style.tour_page}>
+      <div className={style.navigation}>
+        <button className={style.back_button} onClick={() => props.handlepageviewclick()}><img className={style.back_image} src={arrowImage} /></button>
+        <button className={style.tour_button} onClick={() => props.handlelistviewclick()}><img className={style.tour_image} src={btnImage} />{btnText}</button>
+      </div>
+      <div className={`${style.content} ${style.top}`}>
+        {renderRooms()}
       </div>
     </div>
-    
+
   );
 };
 
