@@ -5,3 +5,5 @@ node_modules
 # Compiled Dirs (http://nodejs.org/api/addons.html)
 build/
 public/bundle.js
+coverage/
+test/__snapshots__

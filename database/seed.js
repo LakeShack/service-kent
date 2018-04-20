@@ -14,7 +14,7 @@ var imageDataCreater = function () {
         id: i,
         title: 'Relax in the comfort of '+ faker.address.streetName(),
         location: faker.address.city(),
-        rating: (Math.floor(Math.random()*5)+1),
+        rating: (Math.floor(Math.random()*2)+3),
         saved: false,
         reviewCount: ((Math.floor(Math.random()*1000))),
         shared: {
@@ -23,10 +23,16 @@ var imageDataCreater = function () {
             email: faker.random.boolean(),
         },
         image: {
-            living_room: `https://s3-us-west-1.amazonaws.com/hrsf93-fec-pictures/Bedroom/bedroomimage${i}.jpg`,
+            living_room: `https://s3-us-west-1.amazonaws.com/hrsf93-fec-pictures/Living+Room/livingroomimage${i}.jpg`,
             bedroom: `https://s3-us-west-1.amazonaws.com/hrsf93-fec-pictures/Bedroom/bedroomimage${i}.jpg`, 
-            dining_room: `https://s3-us-west-1.amazonaws.com/hrsf93-fec-pictures/Living+Room/diningroomimage${i}.jpg`,
+            dining_room: `https://s3-us-west-1.amazonaws.com/hrsf93-fec-pictures/Dining+Room/diningroomimage${1}.jpg`,
             den: `https://s3-us-west-1.amazonaws.com/hrsf93-fec-pictures/Den/denimage${i}.jpg`,
+        },
+        descriptions: {
+            living_room: 'live joyfully',
+            bedroom: 'sleep comfortably',
+            dining_room: 'dine lavishly',
+            den: 'enjoy yourself',
         }
         });
 

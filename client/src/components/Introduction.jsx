@@ -23,7 +23,6 @@ var Introduction = (props) => {
   );
 };
 
-
 export default Introduction;
 
 
