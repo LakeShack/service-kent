@@ -1,0 +1,20 @@
+.list_view {
+  position: absolute;
+  top:8.4%;
+  left:0;
+  bottom:0;
+  right:0;
+  z-index: 200;
+  background-color: white;
+  overflow: auto;
+}
+
+.content {
+  width: 58%;
+  margin-left: 16%;
+}
+
+.picture {
+  height: 100px;
+  width: auto;
+}

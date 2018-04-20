@@ -15,12 +15,14 @@ Client
    - renders the picture component on the right
  - introduction 
    - component representing the description on the left of the homepage
- - picture (parent of share, save, tourPage)
+ - picture (parent of share, save, tour)
    - show the main picture on the front page
  - share 
    - show whether shared on fb, twitter, email
  - save
    - show whether saved to list
+ - tour (parent of tourPage)
+   - button to render the tourPage
  - tourPage
    - rendered when you click on picture or "tour this home"
    - living room, bedroom, kitchen

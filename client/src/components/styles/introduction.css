@@ -1,4 +1,5 @@
 .introduction {
+  position: relative;
   display: inline-block;
   background-color: rgb(245, 244, 244);
   height: 550px;
@@ -18,14 +19,14 @@
 }
 
 .text_title {
-  color: darkslategray;
+  color: rgb(72, 73, 75);
   font-size: 12px;
   margin-left: 10%;
   margin-bottom: 3%
 }
 
 .text_location {
-  color: darkslategray;  
+  color: rgb(72, 73, 75);
   margin-left: 10%;  
   margin-right: 20%;
   font-size: 45px;

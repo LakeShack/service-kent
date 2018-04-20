@@ -21,6 +21,12 @@ const imageSchema = new mongoose.Schema({
     bedroom: String,
     dining_room: String,
     den: String
+  },
+  descriptions: {
+    living_room: String,
+    bedroom: String,
+    dining_room: String,
+    den: String
   }
 });
 
@@ -36,7 +42,7 @@ let getImages = (id, callback) => {
     exec(callback);
 };
 
-let patchImage = (id, callback) => {
+let patchImageSavedTrue = (id, callback) => {
   Image.findOneAndUpdate({ id: id },
     { $set: { saved: true } },
     { new: true },
