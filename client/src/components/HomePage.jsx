@@ -16,6 +16,7 @@ class HomePage extends React.Component {
       home: {},
       tourView: false,
       listView: false,
+      currentId: 1
     };
 
     this.getImage = this.getImage.bind(this);
@@ -29,9 +30,12 @@ class HomePage extends React.Component {
     let currentId = Number(parsed.id);
     if (currentId) {
       this.getImage(Number(parsed.id));
+      this.setState({currentId: currentId});
     } else {
       this.getImage(1);
     }
+
+    this.handleSaveClick();
 
   }
 
