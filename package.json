@@ -43,6 +43,7 @@
     "axios": "^0.17.1",
     "babel-preset-stage-0": "^6.24.1",
     "body-parser": "^1.17.2",
+    "bootstrap": "^4.0.0-beta.2",
     "css-loader": "^0.28.11",
     "express": "^4.15.4",
     "faker": "^4.1.0",
@@ -54,6 +55,9 @@
     "react-dom": "^15.6.2",
     "react-rater": "^0.4.8",
     "react-star-ratings": "^2.2.0",
+    "react-toastify": "^4.0.0-rc.5",
+    "react-transition-group": "^2.3.1",
+    "reactstrap": "^5.0.0-beta.3",
     "style-loader": "^0.20.3",
     "underscore": "^1.8.3",
     "url-loader": "^1.0.1"
