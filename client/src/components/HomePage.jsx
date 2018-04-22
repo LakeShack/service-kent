@@ -121,8 +121,7 @@ class HomePage extends React.Component {
                 images={this.state.home.image}
                 descriptions={this.state.home.descriptions}
                 handlepageviewclick={this.handlePageViewClick}
-                handlelistviewclick={this.handleListViewClick}
-                backtohomepage={this.backToHomePage} />
+                handlelistviewclick={this.handleListViewClick} />
               : null}
           </CSSTransitionGroup>
         </div>

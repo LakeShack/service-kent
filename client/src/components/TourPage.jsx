@@ -34,7 +34,7 @@ var TourPage = (props) => {
 
     <div className={style.tour_page}>
       <div className={style.navigation}>
-        <button className={style.back_button} onClick={() => { props.handlepageviewclick(); props.backtohomepage(); }}><img className={style.back_image} src={arrowImage} /></button>
+        <button className={style.back_button} onClick={() => props.handlepageviewclick()}><img className={style.back_image} src={arrowImage} /></button>
         <button className={style.tour_button} onClick={() => props.handlelistviewclick()}><img className={style.tour_image} src={btnImage} />{btnText}</button>
       </div>
       <div className={`${style.content} ${style.top}`}>
