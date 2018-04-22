@@ -11,11 +11,7 @@ const imageSchema = new mongoose.Schema({
   rating: Number,
   reviewCount: Number,
   saved: Boolean,
-  shared: {
-    facebook: Boolean,
-    twitter: Boolean,
-    email: Boolean
-  },
+  shared: Boolean,
   image: {
     living_room: String,
     bedroom: String,
@@ -42,13 +38,29 @@ let getImages = (id, callback) => {
     exec(callback);
 };
 
-let patchImage = (id, callback) => {
+let patchImageSave = (id, callback) => {
   Image.findOneAndUpdate({ id: id },
     { $set: { saved: true } },
     { new: true },
     callback);
 };
 
+let patchImageUnsave = (id, callback) => {
+  Image.findOneAndUpdate({ id: id },
+    { $set: { saved: false } },
+    { new: true },
+    callback);
+};
+
+let patchImageShare = (id, callback) => {
+  Image.findOneAndUpdate({ id: id },
+    { $set: { shared: true } },
+    { new: true },
+    callback);
+};
+
 module.exports.Image = Image;
 module.exports.getImages = getImages;
-module.exports.patchImage = patchImage;
+module.exports.patchImageSave = patchImageSave;
+module.exports.patchImageUnsave = patchImageUnsave;
+module.exports.patchImageShare = patchImageShare;
