@@ -169,9 +169,13 @@ describe('Save', () => {
 
 describe('Share', () => {
 
+  const home = {
+    shared: false
+  };
+
   it('should match snapshot', () => {
     const view = renderer.create(
-      <Share />
+      <Share home={home}/>
     ).toJSON();
 
     expect(view).toMatchSnapshot();

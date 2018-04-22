@@ -5,6 +5,7 @@ import Picture from './Picture.jsx';
 import TourPage from './TourPage.jsx';
 import ListView from './ListView.jsx';
 import queryString from 'query-string';
+import { CSSTransitionGroup } from 'react-transition-group';
 
 
 class HomePage extends React.Component {
@@ -110,16 +111,26 @@ class HomePage extends React.Component {
             handlesaveclick={this.handleSaveClick}
             handleshareclick={this.handleShareClick} />
         }
-        {this.state.home.image && this.state.tourView ?
-          <TourPage
-            images={this.state.home.image}
-            descriptions={this.state.home.descriptions}
-            handlepageviewclick={this.handlePageViewClick}
-            handlelistviewclick={this.handleListViewClick} />
-          : null}
+        <div>
+          <CSSTransitionGroup
+            transitionName="tour-view"
+            transitionEnterTimeout={600}
+            transitionLeave={false}>
+            {this.state.home.image && this.state.tourView ?
+              <TourPage
+                images={this.state.home.image}
+                descriptions={this.state.home.descriptions}
+                handlepageviewclick={this.handlePageViewClick}
+                handlelistviewclick={this.handleListViewClick}
+                backtohomepage={this.backToHomePage} />
+              : null}
+          </CSSTransitionGroup>
+        </div>
+
         {this.state.home.image && this.state.tourView && this.state.listView ?
           <ListView images={this.state.home.image} />
           : null}
+
 
       </div>
     );
