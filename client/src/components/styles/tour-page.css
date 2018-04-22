@@ -13,6 +13,7 @@
 .navigation { 
   position: fixed;
   top: 0;
+  height: 60px;
   border-bottom: solid;
   border-width: 1px;
   width: 100%;
@@ -57,7 +58,7 @@
 }
 
 .top {
-  margin-top: 13%;
+  margin-top: 90px;
 }
 
 .tour_image {

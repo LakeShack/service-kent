@@ -9,8 +9,8 @@ var Picture = (props) => (
 
   <div className={style.container} >
     <span><img src={props.home.image.living_room} className={style.picture}/></span>
-    <Save home={props.home}/>
-    <Share home={props.home}/>
+    <Save home={props.home} handlesaveclick={props.handlesaveclick}/>
+    <Share home={props.home} handleshareclick={props.handleshareclick}/>
     <Tour home={props.home} handlepageviewclick={props.handlepageviewclick} tourview={props.tourview}/>   
   </div>
   

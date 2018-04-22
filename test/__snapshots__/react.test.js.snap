@@ -1,0 +1,246 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListView should match snapshot 1`] = `
+<div
+  className="list_view"
+>
+  <div
+    className="content"
+  >
+    <div>
+      <img
+        className="picture"
+        src={undefined}
+      />
+      <p
+        className="room_text"
+      >
+        Living area
+      </p>
+    </div>
+    <div>
+      <img
+        className="picture"
+        src={undefined}
+      />
+      <p
+        className="room_text"
+      >
+        Dining area
+      </p>
+    </div>
+    <div>
+      <img
+        className="picture"
+        src={undefined}
+      />
+      <p
+        className="room_text"
+      >
+        Bedroom area
+      </p>
+    </div>
+    <div>
+      <img
+        className="picture"
+        src={undefined}
+      />
+      <p
+        className="room_text"
+      >
+        Den
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Picture should match snapshot 1`] = `
+<div
+  className="container"
+>
+  <span>
+    <img
+      className="picture"
+      src="test"
+    />
+  </span>
+  <div>
+    <button
+      className="save_button"
+      onClick={[Function]}
+    >
+      <img
+        className="save_image"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANHSURBVGhD7ZlJyE1RHMA/8xwW5iHFxlBsEEKJlZBhRQiJQsnGmAUlsjJsFBKSIiEyrChjpEjGIgsLypx5/P2O79Tnq89373v3fe8t7q9+vXdO75x7zr33TP9XlZOTk5OTU0YaY+u/X4uiTfVng9EBF+JJfI7f8Te+wlu4Efvj/2iGk/AwPsLPaB0f8R7uwHHYCDOnBa7EN+hFo9/wNf6skafHsAfWZjI+w5q//YRva+XpVRyNmdENr2C8wCmcjeZHvMvDcDv6dPzde7Th0hz3Y6zjJi7GXhjxZg3GtRg76w1ahUU/nS4YK32II7E+2uIetIxPzE6fqE7byRlYHy1xNcZX1xtUMFZ2Da3oAnbENMzHX2h5fYw1n0ASxqNjx/KLzCgEx4QV+CTam1EA69A6HAP1TQJ1MR29IXao5uucCO9+HNijzCgQ3+2zaGOK4SDall0hlQJfCwueDqniaFf9WQx90IH/AZ0UEuM6YUfmhFRlcAlt08SQSshTtFDPkKoMNqBtWhNSCfmCPsqmIVUZOGvZkZ0hlQAbbwE7U0n4mtsu16jEvEMLZbEhzIrlaJu2hlRC7qOFBoZUZbANbdOKkErIIbTQvJCqDK6jbRobUglZihY6ElLlpzO67/qK7uUS0x2dtTwreAYpN3F8HA+plJxBC7tfKiceEeK6NtWMtIxBC3tw6mRGmViCtuMuerQuiPNoJW7ayoE7i3h6nGZGofRFj6JWNMuMBqQJXkSv7cGsaOKj9Tww1IwGwiCE132Bqc8hdXEArdTxMsSMErMJvZ5TrmM1MzwDeECy8pc4CEvFevQ6ngrnmpE1rfAcxsc9ArPEGWkzxk64dpQMN5FxJnN3bIQkC1ytY6TFhbjgQEMajK7sQy+qW7CYc0s/vIPWZSxsCjYoPvofaAMuY29My0yMRwbDRQOwLExAB78NMeqSNFriq7QXLacGOdLGzTKnK8Z9me7G/+1QXYuMlflbN6XLsCQB60KwITYoRtaNstdePJ2VDIMaRvU3t7GSDm7/4Dt+A22oDTbiYQccP4ZdzXdcOc2mik+VA2cwOxDvvH8PuCPw+wPMev0pOcPxCdoB9W+FVKe7SsLT5VFcEFI5OTk5OYGqqj9XWeCu2RXOqAAAAABJRU5ErkJggg=="
+      />
+    </button>
+  </div>
+  <div>
+    <button
+      className="share_button"
+      onClick={[Function]}
+    >
+      <img
+        className="share_image"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALLSURBVHhe7Z3Bqw1hGIePBWFzUygWLOQvsFCUKDtlYytlSVnaKcpSNhZWlpQlKwr/gbKyQ8niriylpPi9t/fU900z58w3850zL+d56lnM1Nx+zVP3dufe5swAarNXPpJHdo5gUvbLt/KP/CSPSZgIi/FOWoy5nyVRJqAtBlEmYlGMuURZE31izCXKiimJMZcoK6Irxu/G8a/GsUmUynTF+CjvNs49kS8b50yiVGJRjMPyRnLOfCz3yLYoXyRRRrAshtEWxCBKZfrEMLqCGESpRN8YxqIgBlFGUhLDWBbEIMpASmMYfYIYRClkSAyjbxCDKD0ZGsMoCWIQZQm75GvZvEF9YhilQQyL8kKm15n2y+MBudGckc0b0zeGMSSI0RXlptxoTsj0eVRJDGNoEKMtyhW58VyT7+VTechOFDAmiGFRHsgP8r60b6EwgrFBoDIECQZBgkGQYBAkGAQJBkGCQZBgEMSx/zi/WNELcsiDvRpB9smzsm3XUA/KtWKPqtMbUcMf8rwsYWyQ4/KbTL9GDS/JtbKKIOZzWcLYILdlen0t/5sg92QJY4Nclun1tZw8yE/5ZoSv5B25W5ZQ42fIdWl/RWzb1ddtme6YPMhXOQU1gtTgmUx3EMQliEuQfAdBXIK4BMl3EMQliEuQfAdBXIK4BMl3EMQliEuQfAdBXIK4BMl3EMQliEuQfAdBXIK4BMl3EMQliEuQfAdBXIK4BMl3EMQliEuQfAdBXIK4BMl3EMQliEuQfMfGBrkq0x0P5RQQxDkqv0vbYO9MOSengCAJJ+UteXrnaBoIEgyCBIMgwSBIMAgSDIIEgyDBIEgwCBIMggSDIMEgSDAIEgyCBIMgwSBIMAgSDIIEgyDBIEgwCBIMggSDIMEgSDAIEgyCBIMgwSBIMAgSjHBBxr77/V833LvfMZcgwSRIMNcexD5l+RR2uiUHMJv9BT3oPXjaCC5CAAAAAElFTkSuQmCC"
+      />
+    </button>
+    <div />
+  </div>
+  <div>
+    <div>
+       
+      <button
+        className="tour_button"
+        onClick={[Function]}
+      >
+        <img
+          className="tour_image"
+          src="https://image.flaticon.com/icons/svg/54/54917.svg"
+        />
+        TOUR THIS HOME
+      </button>
+       
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Save should match snapshot 1`] = `
+<div>
+  <button
+    className="save_button"
+    onClick={[Function]}
+  >
+    <img
+      className="save_image"
+      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIISURBVGhD7dm/S1VhHMfx2w/sB5i5WQ0F4tjQmiKETTaJQRTkEKg0OvVjqU2aBG1qEXQIbSgV7A+oqLWhCESzITdNsUJLq/eHPHCRL9fnnHvueR7hecMLRfR7nqvnnnueaykWi8ViMY8dxPH/n1ZV/c7HwmpEL2bwFVv4ixW8xyAuoFLHcBUTWMAGNOMHPmIEHTiA3DuKu/gGHXQvL9GC8rSwm1iC9TO7vUU7cusUNNQ6WCWb6IHS6TcL6/sq2cY9VP3XacIXWAdx8Qd38Krsa1nodMucTqd3sAb70I9M6TdpDfRFF4PTSJWuTq5P7CI9QapuwRrk2zqOwLlpWINCcAXOfYY1JAT34Vzyahuix3DqMKwBoRiFc7rUWUNCMATnPsEaEoIBOPcM1pAQXIZzt2EN8e0ntA1w7gx052kN8+kFUqfNkzXMp1QvhkltsIb5oh2ottaZmoI11IdOZO4sdKNmDS6S9vdVdw3a6VkHKMIctK3IpUewDlJr33EeuXUIRT9f9FZTF3KvDkVdkn9Dp3TN0oN5DuvgedHbSN2oebrNH4a1iGot4xIKrQ+/YC0oiw9ohpcuYh7WwtIYwwl4TQsYh7XAvaziOoLqBtZgLdjyGucQZFrYG1gLT+jS+gC6aASdFvgQyf9Oyi2iFfsqbQO08ORBPEUD9mUnMQm9BRuLxWKxnUqlfyGi206x1fChAAAAAElFTkSuQmCC"
+    />
+  </button>
+</div>
+`;
+
+exports[`Share should match snapshot 1`] = `
+<div>
+  <button
+    className="share_button"
+    onClick={[Function]}
+  >
+    <img
+      className="share_image"
+      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALLSURBVHhe7Z3Bqw1hGIePBWFzUygWLOQvsFCUKDtlYytlSVnaKcpSNhZWlpQlKwr/gbKyQ8niriylpPi9t/fU900z58w3850zL+d56lnM1Nx+zVP3dufe5swAarNXPpJHdo5gUvbLt/KP/CSPSZgIi/FOWoy5nyVRJqAtBlEmYlGMuURZE31izCXKiimJMZcoK6Irxu/G8a/GsUmUynTF+CjvNs49kS8b50yiVGJRjMPyRnLOfCz3yLYoXyRRRrAshtEWxCBKZfrEMLqCGESpRN8YxqIgBlFGUhLDWBbEIMpASmMYfYIYRClkSAyjbxCDKD0ZGsMoCWIQZQm75GvZvEF9YhilQQyL8kKm15n2y+MBudGckc0b0zeGMSSI0RXlptxoTsj0eVRJDGNoEKMtyhW58VyT7+VTechOFDAmiGFRHsgP8r60b6EwgrFBoDIECQZBgkGQYBAkGAQJBkGCQZBgEMSx/zi/WNELcsiDvRpB9smzsm3XUA/KtWKPqtMbUcMf8rwsYWyQ4/KbTL9GDS/JtbKKIOZzWcLYILdlen0t/5sg92QJY4Nclun1tZw8yE/5ZoSv5B25W5ZQ42fIdWl/RWzb1ddtme6YPMhXOQU1gtTgmUx3EMQliEuQfAdBXIK4BMl3EMQliEuQfAdBXIK4BMl3EMQliEuQfAdBXIK4BMl3EMQliEuQfAdBXIK4BMl3EMQliEuQfAdBXIK4BMl3EMQliEuQfAdBXIK4BMl3EMQliEuQfMfGBrkq0x0P5RQQxDkqv0vbYO9MOSengCAJJ+UteXrnaBoIEgyCBIMgwSBIMAgSDIIEgyDBIEgwCBIMggSDIMEgSDAIEgyCBIMgwSBIMAgSDIIEgyDBIEgwCBIMggSDIMEgSDAIEgyCBIMgwSBIMAgSjHBBxr77/V833LvfMZcgwSRIMNcexD5l+RR2uiUHMJv9BT3oPXjaCC5CAAAAAElFTkSuQmCC"
+    />
+  </button>
+  <div />
+</div>
+`;
+
+exports[`Tour should match snapshot 1`] = `
+<div>
+  <div>
+     
+    <button
+      className="tour_button"
+      onClick={[Function]}
+    >
+      <img
+        className="tour_image"
+        src="https://image.flaticon.com/icons/svg/54/54917.svg"
+      />
+      TOUR THIS HOME
+    </button>
+     
+  </div>
+</div>
+`;
+
+exports[`TourPage should match snapshot 1`] = `
+<div
+  className="tour_page"
+>
+  <div
+    className="navigation"
+  >
+    <button
+      className="back_button"
+      onClick={[Function]}
+    >
+      <img
+        className="back_image"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAG5SURBVHhe7d0xSiRBAEbhQVcNnFQFc0HwFCKY6AU2MNpkQ2P1FkamXkHQPcGeQfNNBA+ggat/wQjSFDodVPmQ98FP5fXotGsiSZL0nU1np77Qj+w0+5e9ZPfZWbaYqbOV7DorIYa7yNRRiXGT1WKU/c92MnXwWYy3/crU2Lwxyo4yNTQmxmO2nqmRMTHKfmdqZGyMk0yNGAPEGCDGADEGiDFAjAFiDBBjgBgDxBggxgAxBogxQIwBYgwQY4AYA8QYIMYAMQaIMUCMAWIMEGOAGAPEGCDGADEGiDFAjAFiDBBjgCxnxgA5z2oXX5sxGlvKnrLa5Q9njA62s9rlD3eZqYPV7DmrRXi/8hUdZurgKqtFGM4onaxld1ktwnBG6WQzMwqMUYCMAmQUIKMAjY1ykKkxowAZBcgoQEYBMgqQUYCMAmQUIKMAGQXIKEBGATIKkFGAjAJUotxmtQjDGaUTowAZBcgoQEYBMgqQUYCMAmQUIKMAGQXIKEBjo+xlamxMlIdsmqmxMVF+Zupg3ijHmTqZJ8pupo4+ivI3W8jUWXnE/k/2Pkb5e9FGpi+0le3PTkmSJH0Dk8kr2Milf2sdpAkAAAAASUVORK5CYII="
+      />
+    </button>
+    <button
+      className="tour_button"
+      onClick={[Function]}
+    >
+      <img
+        className="tour_image"
+        src="https://image.flaticon.com/icons/svg/54/54917.svg"
+      />
+      Tour this home
+    </button>
+  </div>
+  <div
+    className="content top"
+  >
+    <div>
+      <p
+        className="room_text"
+      >
+        Living area
+      </p>
+      <p
+        className="description_text"
+      />
+      <img
+        className="picture"
+        src={undefined}
+      />
+    </div>
+    <div>
+      <p
+        className="room_text"
+      >
+        Dining area
+      </p>
+      <p
+        className="description_text"
+      />
+      <img
+        className="picture"
+        src={undefined}
+      />
+    </div>
+    <div>
+      <p
+        className="room_text"
+      >
+        Bedroom area
+      </p>
+      <p
+        className="description_text"
+      />
+      <img
+        className="picture"
+        src={undefined}
+      />
+    </div>
+    <div>
+      <p
+        className="room_text"
+      >
+        Den
+      </p>
+      <p
+        className="description_text"
+      />
+      <img
+        className="picture"
+        src={undefined}
+      />
+    </div>
+  </div>
+</div>
+`;
