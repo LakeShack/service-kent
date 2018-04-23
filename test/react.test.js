@@ -61,9 +61,9 @@ describe('HomePage', () => {
 
   });
 
-  const tourButton = shallow(<Tour handlepageviewclick={() => wrapper.setState({ tourView: true })} />);
+  const tourButton = shallow(<Tour handlePageViewClick={() => wrapper.setState({ tourView: true })} />);
 
-  it('handlepageclickview in Tour toggles the boolean in state.tourView', () => {
+  it('handlePageViewClick in Tour toggles the boolean in state.tourView', () => {
 
     expect(wrapper.state().tourView).toEqual(false);
     tourButton.find('.tour_button').simulate('click');
@@ -72,9 +72,9 @@ describe('HomePage', () => {
 
   });
 
-  const tourButtons = shallow(<TourPage handlelistviewclick={() => wrapper.setState({ listView: true })} handlepageviewclick={() => wrapper.setState({ tourView: false })} images={testData.images} descriptions={testData.descriptions} />);
+  const tourButtons = shallow(<TourPage handleListViewClick={() => wrapper.setState({ listView: true })} handlePageViewClick={() => wrapper.setState({ tourView: false })} images={testData.images} descriptions={testData.descriptions} />);
 
-  it('handlepageclickview in TourPage toggles the boolean in state.tourView', () => {
+  it('handlePageViewClick in TourPage toggles the boolean in state.tourView', () => {
 
     expect(wrapper.state().tourView).toEqual(true);
     tourButtons.find('.back_button').simulate('click');
@@ -83,7 +83,7 @@ describe('HomePage', () => {
 
   });
 
-  it('handlelistclickview in TourPage toggles the boolean in state.listView', () => {
+  it('handleListViewClick in TourPage toggles the boolean in state.listView', () => {
 
     expect(wrapper.state().listView).toEqual(false);
     tourButtons.find('.tour_button').simulate('click');
