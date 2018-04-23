@@ -28,7 +28,7 @@ var Share = (props) => {
 
   return (
     <div>
-      <button className={style.share_button} onClick={() => { props.handleshareclick(); notify(); }}><img className={style.share_image} src={shareImage} /></button>
+      <button className={style.share_button} onClick={() => { props.handleShareClick(); notify(); }}><img className={style.share_image} src={shareImage} /></button>
       <ToastContainer
         position="bottom-center"
         autoClose={3000}

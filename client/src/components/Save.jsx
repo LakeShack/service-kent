@@ -15,7 +15,7 @@ var Save = (props) => {
 
   return (
     <div>
-      <button className={style.save_button} onClick={() => props.handlesaveclick()}>
+      <button className={style.save_button} onClick={() => props.handleSaveClick()}>
         <img className={style.save_image} src={currentHeart} />
       </button>
     </div>

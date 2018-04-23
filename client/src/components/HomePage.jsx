@@ -106,10 +106,10 @@ class HomePage extends React.Component {
         {this.state.home.image &&
           <Picture
             home={this.state.home}
-            handlepageviewclick={this.handlePageViewClick}
-            tourview={this.state.tourView}
-            handlesaveclick={this.handleSaveClick}
-            handleshareclick={this.handleShareClick} />
+            handlePageViewClick={this.handlePageViewClick}
+            tourView={this.state.tourView}
+            handleSaveClick={this.handleSaveClick}
+            handleShareClick={this.handleShareClick} />
         }
         <div>
           <CSSTransitionGroup
@@ -120,8 +120,8 @@ class HomePage extends React.Component {
               <TourPage
                 images={this.state.home.image}
                 descriptions={this.state.home.descriptions}
-                handlepageviewclick={this.handlePageViewClick}
-                handlelistviewclick={this.handleListViewClick} />
+                handlePageViewClick={this.handlePageViewClick}
+                handleListViewClick={this.handleListViewClick} />
               : null}
           </CSSTransitionGroup>
         </div>
