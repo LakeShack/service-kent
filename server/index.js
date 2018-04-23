@@ -2,11 +2,13 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const image = require('../database/image.js');
 const app = express();
+const cors = require('cors');
 const port = 4212;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use(cors());
 app.use(express.static(__dirname + '/../public'));
 
 app.get('/images/:id', function (req, res) {

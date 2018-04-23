@@ -41,7 +41,7 @@ class HomePage extends React.Component {
   }
 
   getImage(id) {
-    axios.get(`/images/${id}`)
+    axios.get(`http://127.0.0.1:4212/images/${id}`)
       .then((response) => {
         this.setState({ home: response.data });
       })
@@ -51,7 +51,7 @@ class HomePage extends React.Component {
   }
 
   saveHomeToList(id) {
-    axios.patch(`/images/${id}`)
+    axios.patch(`http://127.0.0.1:4212/images/${id}`)
       .then((response) => {
         this.setState({ home: response.data });
       })
@@ -62,7 +62,7 @@ class HomePage extends React.Component {
   }
 
   shareHome(id) {
-    axios.patch(`/images/${id}`, { 'shared': true })
+    axios.patch(`http://127.0.0.1:4212/images/${id}`, { 'shared': true })
       .then((response) => {
         this.setState({ home: response.data });
       })
@@ -120,6 +120,7 @@ class HomePage extends React.Component {
               <TourPage
                 images={this.state.home.image}
                 descriptions={this.state.home.descriptions}
+                listView={this.state.listView}
                 handlePageViewClick={this.handlePageViewClick}
                 handleListViewClick={this.handleListViewClick} />
               : null}

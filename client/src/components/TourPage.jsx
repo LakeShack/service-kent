@@ -12,7 +12,7 @@ var TourPage = (props) => {
 
   let btnText, btnImage;
 
-  if (props.listview === true) {
+  if (props.listView === true) {
     btnText = rooms;
     btnImage = roomsImage;
   } else {
