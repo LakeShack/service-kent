@@ -6,4 +6,3 @@ node_modules
 build/
 public/bundle.js
 coverage/
-test/__snapshots__

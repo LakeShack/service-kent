@@ -17,11 +17,7 @@ var imageDataCreater = function () {
         rating: (Math.floor(Math.random()*2)+3),
         saved: false,
         reviewCount: ((Math.floor(Math.random()*1000))),
-        shared: {
-            facebook: faker.random.boolean(),
-            twitter: faker.random.boolean(),
-            email: faker.random.boolean(),
-        },
+        shared: false,
         image: {
             living_room: `https://s3-us-west-1.amazonaws.com/hrsf93-fec-pictures/Living+Room/livingroomimage${i}.jpg`,
             bedroom: `https://s3-us-west-1.amazonaws.com/hrsf93-fec-pictures/Bedroom/bedroomimage${i}.jpg`, 

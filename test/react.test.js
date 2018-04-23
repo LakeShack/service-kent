@@ -1,6 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { shallow, mount, render } from 'enzyme';
+import axios from 'axios';
 import HomePage from '../client/src/components/HomePage.jsx';
 import Introduction from '../client/src/components/Introduction.jsx';
 import Picture from '../client/src/components/Picture.jsx';
@@ -28,15 +29,17 @@ const testData = {
 
 describe('HomePage', () => {
 
+  const homePage = shallow(<HomePage />);
+
   it('HomePage component should render the home-page div', () => {
-    expect(shallow(<HomePage />).is('.home-page')).toBe(true);
+    expect(homePage.is('.home-page')).toBe(true);
   });
 
   it('should mount only 1', function () {
     expect(mount(<HomePage />).find('.home-page').length).toBe(1);
   });
 
-  const wrapper = shallow(<HomePage />);
+  const wrapper = homePage;
   wrapper.state().tourView = false;
   wrapper.state().listView = false;
 
@@ -58,9 +61,9 @@ describe('HomePage', () => {
 
   });
 
-  const tourButton = shallow(<Tour handlepageviewclick={() => wrapper.setState({ tourView: true })} />);
+  const tourButton = shallow(<Tour handlePageViewClick={() => wrapper.setState({ tourView: true })} />);
 
-  it('handlepageclickview in Tour toggles the boolean in state.tourView', () => {
+  it('handlePageViewClick in Tour toggles the boolean in state.tourView', () => {
 
     expect(wrapper.state().tourView).toEqual(false);
     tourButton.find('.tour_button').simulate('click');
@@ -69,9 +72,9 @@ describe('HomePage', () => {
 
   });
 
-  const tourButtons = shallow(<TourPage handlelistviewclick={() => wrapper.setState({ listView: true })} handlepageviewclick={() => wrapper.setState({ tourView: false })} images={testData.images} descriptions={testData.descriptions} />);
+  const tourButtons = shallow(<TourPage handleListViewClick={() => wrapper.setState({ listView: true })} handlePageViewClick={() => wrapper.setState({ tourView: false })} images={testData.images} descriptions={testData.descriptions} />);
 
-  it('handlepageclickview in TourPage toggles the boolean in state.tourView', () => {
+  it('handlePageViewClick in TourPage toggles the boolean in state.tourView', () => {
 
     expect(wrapper.state().tourView).toEqual(true);
     tourButtons.find('.back_button').simulate('click');
@@ -80,7 +83,7 @@ describe('HomePage', () => {
 
   });
 
-  it('handlelistclickview in TourPage toggles the boolean in state.listView', () => {
+  it('handleListViewClick in TourPage toggles the boolean in state.listView', () => {
 
     expect(wrapper.state().listView).toEqual(false);
     tourButtons.find('.tour_button').simulate('click');
@@ -89,134 +92,133 @@ describe('HomePage', () => {
 
   });
 
+  jest.mock('axios', () => {
+    const sampleHome = [
+      { title: 'test home', url: 'sample_url' }
+    ];
 
+    return {
+      get: jest.fn(() => Promise.resolve(sampleHome)),
+    };
+  });
+
+  it('get home on #componentDidMount', () => {
+    const home = homePage;
+
+    home.update();
+    setTimeout(() => {
+      expect(axios.get).toHaveBeenCalled();
+      expect(axios.get).toHaveBeenCalledWith('sample_url');
+      expect(app.state()).toHaveProperty('home', [
+        { title: 'test home', url: 'sample_url' }
+      ]);
+    }, 1000);
+  });
 });
 
 describe('Introduction', () => {
 
-  it('renders correctly', () => {
-    setTimeout(() => {
-      const rendered = renderer.create(
-        <Introduction />
-      );
-      expect(rendered.toJSON()).toMatchSnapshot();
-    });
-  }, 1000);
+  const home = {
+    location: 'test',
+    rating: 3,
+    title: 'test'
+  };
+
+  it('Introduction component should render the introduction div', () => {
+    expect(shallow(<Introduction home={home}/>).is('.introduction')).toBe(true);
+  });
+
+  it('should mount only 1', function () {
+    expect(mount(<Introduction home={home}/>).find('.introduction').length).toBe(1);
+  });
 
 });
 
 
 describe('Picture', () => {
 
-  it('renders correctly', () => {
-    setTimeout(() => {
-      const rendered = renderer.create(
-        <Picture />
-      );
-      expect(rendered.toJSON()).toMatchSnapshot();
-    }, 1000);
+  it('should match snapshot', () => {
+    const home = {
+      image: {
+        living_room: 'test'
+      }
+    };
+    const view = renderer.create(
+      <Picture home={home} />
+    ).toJSON();
 
-  });
-
-  it('Picture component should render the picture div', () => {
-    setTimeout(() => {
-      expect(shallow(<Picture />).is('.picture')).toBe(true);
-    }, 1000);
+    expect(view).toMatchSnapshot();
   });
 
 });
 
 describe('Save', () => {
 
-  it('renders correctly', () => {
-    setTimeout(() => {
-      const rendered = renderer.create(
-        <Save />
-      );
-      expect(rendered.toJSON()).toMatchSnapshot();
-    });
-  }, 1000);
+  it('should match snapshot', () => {
+    const home = {
+      saved: true
+    };
+    const view = renderer.create(
+      <Save home={home} />
+    ).toJSON();
 
-  it('Save component should render the save button', () => {
-    setTimeout(() => {
-      expect(shallow(<Picture />).is('.save_button')).toBe(true);
-    }, 1000);
+    expect(view).toMatchSnapshot();
   });
 
 });
 
 describe('Share', () => {
 
-  it('renders correctly', () => {
-    setTimeout(() => {
-      const rendered = renderer.create(
-        <Share />
-      );
-      expect(rendered.toJSON()).toMatchSnapshot();
-    });
-  }, 1000);
+  const home = {
+    shared: false
+  };
 
-  it('Share component should render the share button', () => {
-    setTimeout(() => {
-      expect(shallow(<Picture />).is('.share_button')).toBe(true);
-    }, 1000);
+  it('should match snapshot', () => {
+    const view = renderer.create(
+      <Share home={home}/>
+    ).toJSON();
+
+    expect(view).toMatchSnapshot();
   });
+
 
 });
 
 describe('Tour', () => {
 
-  it('renders correctly', () => {
-    setTimeout(() => {
-      const rendered = renderer.create(
-        <Tour />
-      );
-      expect(rendered.toJSON()).toMatchSnapshot();
-    });
-  }, 1000);
+  it('should match snapshot', () => {
+    const view = renderer.create(
+      <Tour />
+    ).toJSON();
 
-  it('Tour component should render the tour button', () => {
-    setTimeout(() => {
-      expect(shallow(<Picture />).is('.tour_button')).toBe(true);
-    }, 1000);
+    expect(view).toMatchSnapshot();
   });
 
 });
 
 describe('TourPage', () => {
 
-  it('renders correctly', () => {
-    setTimeout(() => {
-      const rendered = renderer.create(
-        <TourPage />
-      );
-      expect(rendered.toJSON()).toMatchSnapshot();
-    });
-  }, 1000);
+  it('should match snapshot', () => {
+    const images = ['tour', 'test'];
+    const descriptions = ['descriptions', 'test'];
+    const view = renderer.create(
+      <TourPage images={images} descriptions={descriptions} />
+    ).toJSON();
 
-  it('TourPage component should render the pictures', () => {
-    setTimeout(() => {
-      expect(shallow(<TourPage />).is('.picture')).toBe(true);
-    }, 1000);
+    expect(view).toMatchSnapshot();
   });
 
 });
 
 describe('ListView', () => {
 
-  it('renders correctly', () => {
-    setTimeout(() => {
-      const rendered = renderer.create(
-        <ListView />
-      );
-      expect(rendered.toJSON()).toMatchSnapshot();
-    });
-  }, 1000);
+  it('should match snapshot', () => {
+    const images = ['list', 'test'];
+    const view = renderer.create(
+      <ListView images={images} />
+    ).toJSON();
 
-  it('ListView component should render the pictures', () => {
-    setTimeout(() => {
-      expect(shallow(<ListView />).is('.picture')).toBe(true);
-    }, 1000);
+    expect(view).toMatchSnapshot();
   });
 
 });

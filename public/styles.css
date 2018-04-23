@@ -1,5 +1,4 @@
 body {
-  /* font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif; */
   font-family: 'Montserrat', sans-serif;
   position: relative;
 }
@@ -15,3 +14,13 @@ html, body {
   min-height: 100%;
   overflow:auto;
 }
+
+.tour-view-enter {
+  opacity: 0.1;
+}
+
+.tour-view-enter.tour-view-enter-active {
+  opacity: 1;
+  transition: opacity 600ms ease-in;
+}
+
