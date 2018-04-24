@@ -28,8 +28,6 @@
 - Node 6.13.0
 - MongoDB 
 - Mongoose
-- Express
-- React
 
 Optional
 - Nodemon
