@@ -41,7 +41,8 @@ var sampleImagesArr = imageDataCreater();
 
 const insertSampleImages = function() {
     image.Image.create(sampleImagesArr)
-      .then(() => db.disconnect());
+      .then(() => db.disconnect())
+      .catch((err) => {console.log('insert data error'); return;});
   };
   
 insertSampleImages();

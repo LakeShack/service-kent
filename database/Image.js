@@ -33,6 +33,7 @@ let getImages = (id, callback) => {
     findOne({ id: id }, function (err, result) {
       if (err) {
         console.log('DATABASE GET ERROR ', err);
+        return;
       }
     }).
     exec(callback);
