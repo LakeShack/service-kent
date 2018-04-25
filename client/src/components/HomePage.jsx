@@ -17,7 +17,7 @@ class HomePage extends React.Component {
       home: {},
       tourView: false,
       listView: false,
-      currentId: 1
+      currentId: 99
     };
 
     this.getImage = this.getImage.bind(this);
