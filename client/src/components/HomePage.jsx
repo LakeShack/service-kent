@@ -36,7 +36,7 @@ class HomePage extends React.Component {
       this.getImage(Number(parsed.id));
       this.setState({ currentId: currentId });
     } else {
-      this.getImage(1);
+      this.getImage(99);
     }
   }
 

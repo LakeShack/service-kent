@@ -21,7 +21,7 @@ var imageDataCreater = function () {
         image: {
             living_room: `https://s3-us-west-1.amazonaws.com/hrsf93-fec-pictures/Living+Room/livingroomimage${i}.jpg`,
             bedroom: `https://s3-us-west-1.amazonaws.com/hrsf93-fec-pictures/Bedroom/bedroomimage${i}.jpg`, 
-            dining_room: `https://s3-us-west-1.amazonaws.com/hrsf93-fec-pictures/Dining+Room/diningroomimage${1}.jpg`,
+            dining_room: `https://s3-us-west-1.amazonaws.com/hrsf93-fec-pictures/Dining+Room/diningroomimage${i}.jpg`,
             den: `https://s3-us-west-1.amazonaws.com/hrsf93-fec-pictures/Den/denimage${i}.jpg`,
         },
         descriptions: {
