@@ -18,41 +18,39 @@ app.use(express.static(__dirname + '/../public'));
 
 app.get('/images/:id', function (req, res) {
 
-  image.getImages(redis, req.params.id, function (result) {
+  image.getImages(redis, saveRequest = false, req.params.id, function (result) {
     res.json(result);
-  }
-  );
+  });
 
 });
 
 app.patch('/images/:id', function (req, res) {
 
   if (!req.body.shared) {
-    image.getImages(req.params.id, function (err, result) {
-      if (err) {
-        console.log('PATCH IMAGE ERROR');
-        return;
+    image.getImages(redis, saveRequest = true, req.params.id, function (result) {
+
+      if (result.saved) {
+        console.log('result saved :: ', result.saved);
+        image.patchImageUnsave(req.params.id, function (err, result) {
+          if (err) {
+            return;
+          } else {
+            res.json(result);
+          }
+        });
       } else {
-        if (result.saved) {
-          image.patchImageUnsave(req.params.id, function (err, result) {
-            if (err) {
-              return;
-            } else {
-              res.json(result);
-            }
-          });
-        } else {
-          image.patchImageSave(req.params.id, function (err, result) {
-            if (err) {
-              return;
-            } else {
-              res.json(result);
-            }
-          });
-        }
+        image.patchImageSave(req.params.id, function (err, result) {
+          if (err) {
+            return;
+          } else {
+            res.json(result);
+          }
+        });
       }
+
     });
   } else {
+
     console.log('share request received ', req.body.shared);
     image.patchImageShare(req.params.id, function (err, result) {
       if (err) {
@@ -62,6 +60,7 @@ app.patch('/images/:id', function (req, res) {
       }
     });
   }
+  
 });
 
 

@@ -28,11 +28,11 @@ const imageSchema = new mongoose.Schema({
 
 const Image = mongoose.model('Image', imageSchema);
 
-let getImages = (redis, id, callback) => {
+let getImages = (redis, saveRequest, id, callback) => {
   redis.get(id, function (err, reply) {
     if (err) { 
       callback(null); 
-    } else if (reply) { //item exists
+    } else if (reply && !saveRequest) { //item exists
       callback(JSON.parse(reply));
     } else {
       //item doesn't exist in cashe - query the main database
@@ -52,14 +52,12 @@ let getImages = (redis, id, callback) => {
 let patchImageSave = (id, callback) => {
   Image.findOneAndUpdate({ id: id },
     { $set: { saved: true } },
-    { new: true },
     callback);
 };
 
 let patchImageUnsave = (id, callback) => {
   Image.findOneAndUpdate({ id: id },
     { $set: { saved: false } },
-    { new: true },
     callback);
 };
 
