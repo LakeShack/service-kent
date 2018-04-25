@@ -28,15 +28,25 @@ const imageSchema = new mongoose.Schema({
 
 const Image = mongoose.model('Image', imageSchema);
 
-let getImages = (id, callback) => {
-  Image.
-    findOne({ id: id }, function (err, result) {
-      if (err) {
-        console.log('DATABASE GET ERROR ', err);
-        return;
-      }
-    }).
-    exec(callback);
+let getImages = (redis, id, callback) => {
+  redis.get(id, function (err, reply) {
+    if (err) { 
+      callback(null); 
+    } else if (reply) { //item exists
+      callback(JSON.parse(reply));
+    } else {
+      //item doesn't exist in cashe - query the main database
+      Image.
+        findOne({ id: id }, function (err, result) {
+          if (err) {
+            console.log('DATABASE GET ERROR ', err);
+            return;
+          } else {
+            redis.set(id, JSON.stringify(result), () => callback(result));
+          }
+        });
+    }
+  });
 };
 
 let patchImageSave = (id, callback) => {
