@@ -5,7 +5,7 @@ const app = express();
 const cors = require('cors');
 const port = 4212;
 const redisClient = require('redis').createClient;
-const redis = redisClient(6379, 'localhost');
+const redis = redisClient(6379, '172.17.0.3');
 const responseTime = require('response-time');
 
 

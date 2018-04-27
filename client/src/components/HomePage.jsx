@@ -41,7 +41,7 @@ class HomePage extends React.Component {
   }
 
   getImage(id) {
-    axios.get(`http://127.0.0.1:4212/images/${id}`)
+    axios.get(`http://ec2-13-58-239-239.us-east-2.compute.amazonaws.com/images/${id}`)
       .then((response) => {
         this.setState({ home: response.data });
       })
@@ -51,7 +51,7 @@ class HomePage extends React.Component {
   }
 
   saveHomeToList(id) {
-    axios.patch(`http://127.0.0.1:4212/images/${id}`)
+    axios.patch(`http://ec2-13-58-239-239.us-east-2.compute.amazonaws.com/images/${id}`)
       .then((response) => {
         this.setState({ home: response.data });
       })
@@ -62,7 +62,7 @@ class HomePage extends React.Component {
   }
 
   shareHome(id) {
-    axios.patch(`http://127.0.0.1:4212/images/${id}`, { 'shared': true })
+    axios.patch(`http://ec2-13-58-239-239.us-east-2.compute.amazonaws.com/images/${id}`, { 'shared': true })
       .then((response) => {
         this.setState({ home: response.data });
       })

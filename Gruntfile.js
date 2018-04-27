@@ -1,23 +1,42 @@
-module.exports = function(grunt) {
+const webpackConfig = require('./webpack.config.js');
+
+module.exports = function (grunt) {
 
   // Project configuration.
   grunt.initConfig({
+
     pkg: grunt.file.readJSON('package.json'),
-    uglify: {
+
+    webpack: {
+
       options: {
-        banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+        stats: !process.env.NODE_ENV || process.env.NODE_ENV === 'development'
+      },
+      prod: webpackConfig,
+      dev: Object.assign({ watch: false }, webpackConfig)
+    },
+
+    aws: grunt.file.readJSON('credentials.json'),
+
+    s3: {
+      options: {
+        accessKeyId: '<%= aws.accessKeyId %>',
+        secretAccessKey: '<%= aws.secretAccessKey %>',
+        bucket: 'chairbnb-picture-proxy'
       },
       build: {
-        src: 'src/<%= pkg.name %>.js',
-        dest: 'build/<%= pkg.name %>.min.js'
+        cwd: 'public',
+        src: '**'
       }
     }
+
   });
 
-  // Load the plugin that provides the "uglify" task.
-  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-aws');
+  grunt.loadNpmTasks('grunt-webpack');
+  
 
   // Default task(s).
-  grunt.registerTask('default', ['uglify']);
+  grunt.registerTask('default', ['webpack', 's3']);
 
 };

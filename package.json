@@ -8,10 +8,12 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "start": "nodemon server/index.js",
+    "start": "node database/seed.js && node server/index.js",
+    "product": "nodemon server/index.js",
     "dev:react": "webpack -d --watch",
     "db:setup": "node database/seed.js",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "upload": "grunt"
   },
   "jest": {
     "setupTestFrameworkScriptFile": "./test/testSetUp.js",
@@ -33,9 +35,11 @@
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
     "eslint-plugin-react": "^7.7.0",
     "grunt": "^1.0.2",
+    "grunt-aws": "^0.6.2",
     "grunt-contrib-jshint": "^1.1.0",
     "grunt-contrib-nodeunit": "^1.0.0",
     "grunt-contrib-uglify": "^3.3.0",
+    "grunt-webpack": "^3.1.1",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^22.4.3",
     "jest-enzyme": "^6.0.0",
