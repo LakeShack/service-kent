@@ -15,6 +15,7 @@ class HomePage extends React.Component {
 
     this.state = {
       home: {},
+      saved: false,
       tourView: false,
       listView: false,
       currentId: 99
@@ -23,7 +24,6 @@ class HomePage extends React.Component {
     this.getImage = this.getImage.bind(this);
     this.handlePageViewClick = this.handlePageViewClick.bind(this);
     this.handleListViewClick = this.handleListViewClick.bind(this);
-    this.saveHomeToList = this.saveHomeToList.bind(this);
     this.handleSaveClick = this.handleSaveClick.bind(this);
     this.shareHome = this.shareHome.bind(this);
     this.handleShareClick = this.handleShareClick.bind(this);
@@ -46,17 +46,6 @@ class HomePage extends React.Component {
         this.setState({ home: response.data });
       })
       .catch(function (error) {
-        return;
-      });
-  }
-
-  saveHomeToList(id) {
-    axios.patch(`http://ec2-13-58-239-239.us-east-2.compute.amazonaws.com/images/${id}`)
-      .then((response) => {
-        this.setState({ home: response.data });
-      })
-      .catch((error) => {
-        console.log('CLIENT PATCH FAILED');
         return;
       });
   }
@@ -86,7 +75,9 @@ class HomePage extends React.Component {
   }
 
   handleSaveClick() {
-    this.saveHomeToList(this.state.currentId);
+    this.setState((prevState) => {
+      return { saved: !prevState.saved };
+    });
   }
 
   handleShareClick() {
@@ -106,6 +97,7 @@ class HomePage extends React.Component {
         {this.state.home.image &&
           <Picture
             home={this.state.home}
+            saved={this.state.saved}
             handlePageViewClick={this.handlePageViewClick}
             tourView={this.state.tourView}
             handleSaveClick={this.handleSaveClick}

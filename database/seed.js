@@ -15,7 +15,6 @@ var imageDataCreater = function () {
         title: 'Relax in the comfort of '+ faker.address.streetName(),
         location: faker.address.city(),
         rating: (Math.floor(Math.random()*2)+3),
-        saved: false,
         reviewCount: ((Math.floor(Math.random()*1000))),
         shared: false,
         image: {

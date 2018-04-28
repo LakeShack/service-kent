@@ -26,32 +26,8 @@ app.get('/images/:id', function (req, res) {
 
 app.patch('/images/:id', function (req, res) {
 
-  if (!req.body.shared) {
-    image.getImages(redis, saveRequest = true, req.params.id, function (result) {
+  image.getImages(redis, saveRequest = true, req.params.id, function (result) {
 
-      if (result.saved) {
-        console.log('result saved :: ', result.saved);
-        image.patchImageUnsave(req.params.id, function (err, result) {
-          if (err) {
-            return;
-          } else {
-            res.json(result);
-          }
-        });
-      } else {
-        image.patchImageSave(req.params.id, function (err, result) {
-          if (err) {
-            return;
-          } else {
-            res.json(result);
-          }
-        });
-      }
-
-    });
-  } else {
-
-    console.log('share request received ', req.body.shared);
     image.patchImageShare(req.params.id, function (err, result) {
       if (err) {
         return;
@@ -59,8 +35,7 @@ app.patch('/images/:id', function (req, res) {
         res.json(result);
       }
     });
-  }
-  
+  });
 });
 
 

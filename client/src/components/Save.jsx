@@ -7,7 +7,7 @@ var Save = (props) => {
   const filledHeart = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIISURBVGhD7dm/S1VhHMfx2w/sB5i5WQ0F4tjQmiKETTaJQRTkEKg0OvVjqU2aBG1qEXQIbSgV7A+oqLWhCESzITdNsUJLq/eHPHCRL9fnnHvueR7hecMLRfR7nqvnnnueaykWi8ViMY8dxPH/n1ZV/c7HwmpEL2bwFVv4ixW8xyAuoFLHcBUTWMAGNOMHPmIEHTiA3DuKu/gGHXQvL9GC8rSwm1iC9TO7vUU7cusUNNQ6WCWb6IHS6TcL6/sq2cY9VP3XacIXWAdx8Qd38Krsa1nodMucTqd3sAb70I9M6TdpDfRFF4PTSJWuTq5P7CI9QapuwRrk2zqOwLlpWINCcAXOfYY1JAT34Vzyahuix3DqMKwBoRiFc7rUWUNCMATnPsEaEoIBOPcM1pAQXIZzt2EN8e0ntA1w7gx052kN8+kFUqfNkzXMp1QvhkltsIb5oh2ottaZmoI11IdOZO4sdKNmDS6S9vdVdw3a6VkHKMIctK3IpUewDlJr33EeuXUIRT9f9FZTF3KvDkVdkn9Dp3TN0oN5DuvgedHbSN2oebrNH4a1iGot4xIKrQ+/YC0oiw9ohpcuYh7WwtIYwwl4TQsYh7XAvaziOoLqBtZgLdjyGucQZFrYG1gLT+jS+gC6aASdFvgQyf9Oyi2iFfsqbQO08ORBPEUD9mUnMQm9BRuLxWKxnUqlfyGi206x1fChAAAAAElFTkSuQmCC';
   let currentHeart = '';
 
-  if (props.home.saved) {
+  if (props.saved) {
     currentHeart = filledHeart;
   } else {
     currentHeart = emptyHeart;

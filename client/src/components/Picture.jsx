@@ -9,7 +9,7 @@ var Picture = (props) => (
 
   <div className={style.container} >
     <span><img src={props.home.image.living_room} className={style.picture}/></span>
-    <Save home={props.home} handleSaveClick={props.handleSaveClick}/>
+    <Save home={props.home} handleSaveClick={props.handleSaveClick} saved={props.saved}/>
     <Share home={props.home} handleShareClick={props.handleShareClick}/>
     <Tour home={props.home} handlePageViewClick={props.handlePageViewClick} tourView={props.tourView}/>   
   </div>

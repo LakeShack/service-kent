@@ -9,7 +9,6 @@ const imageSchema = new mongoose.Schema({
   location: String,
   rating: Number,
   reviewCount: Number,
-  saved: Boolean,
   shared: Boolean,
   image: {
     living_room: String,
@@ -31,10 +30,9 @@ let getImages = (redis, saveRequest, id, callback) => {
   redis.get(id, function (err, reply) {
     if (err) { 
       callback(null); 
-    } else if (reply && !saveRequest) { //item exists
+    } else if (reply && !saveRequest) {
       callback(JSON.parse(reply));
     } else {
-      //item doesn't exist in cashe - query the main database
       Image.
         findOne({ id: id }, function (err, result) {
           if (err) {
@@ -48,18 +46,6 @@ let getImages = (redis, saveRequest, id, callback) => {
   });
 };
 
-let patchImageSave = (id, callback) => {
-  Image.findOneAndUpdate({ id: id },
-    { $set: { saved: true } },
-    callback);
-};
-
-let patchImageUnsave = (id, callback) => {
-  Image.findOneAndUpdate({ id: id },
-    { $set: { saved: false } },
-    callback);
-};
-
 let patchImageShare = (id, callback) => {
   Image.findOneAndUpdate({ id: id },
     { $set: { shared: true } },
@@ -69,6 +55,4 @@ let patchImageShare = (id, callback) => {
 
 module.exports.Image = Image;
 module.exports.getImages = getImages;
-module.exports.patchImageSave = patchImageSave;
-module.exports.patchImageUnsave = patchImageUnsave;
 module.exports.patchImageShare = patchImageShare;
