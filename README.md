@@ -43,4 +43,4 @@ npm install
 
 # picture-service
 
-Front-end capstone project for Hack Reactor. Group project consisted of recreating the Airbnb individual home page. This component is my personal take on the top portion of the Airbnb Plus page composed of the title and description component on the left and pictures component on the right (example: https://www.airbnb.com/rooms/select/8364027).
+<iframe src="https://giphy.com/embed/2t9lYheJ9mMObrnRRY" width="480" height="300" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
