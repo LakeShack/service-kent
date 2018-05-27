@@ -43,4 +43,4 @@ npm install
 
 # picture-service
 
-<iframe src="https://giphy.com/embed/2t9lYheJ9mMObrnRRY" width="480" height="300" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+![](https://media.giphy.com/media/2t9lYheJ9mMObrnRRY/giphy.gif)
