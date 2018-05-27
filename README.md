@@ -1,7 +1,4 @@
-# Project Name
-
-> HomeStyles Pictures-Service
-
+# HomeStyles Pictures-Service
 
 ![](https://media.giphy.com/media/2t9lYheJ9mMObrnRRY/giphy.gif)
 
