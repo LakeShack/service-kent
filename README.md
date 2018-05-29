@@ -1,11 +1,13 @@
 # HomeStyles Pictures-Service
 
- Airbnb Plus item page clone
-
 ![](https://media.giphy.com/media/2t9lYheJ9mMObrnRRY/giphy.gif)
 
 
-## Usage
+## Description
+
+Airbnb Plus item page clone
+
+### Usage
 
 1. Start the MongoDB server
 2. Start redis server
